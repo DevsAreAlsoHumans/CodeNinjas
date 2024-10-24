@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="fr">
-<body>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,6 +9,8 @@
           href="style.css" />
     <title>S’inscrire sur notre site</title>
 </head>
+    
+<body>
 <form method="post" action="">
 <div class="container mt-5">
     <div class="row justify-content-md-center">
@@ -38,6 +39,8 @@
     </div>
 </div>
 </form>
+</body>
+</html>
 
 <?php
 require "db.php";
@@ -62,5 +65,3 @@ if (isset($_POST['nom']) && $_POST['nom'] != '' && isset($_POST['prenom']) && $_
     }
 }
 ?>
-</body>
-</html>
