@@ -13,8 +13,7 @@ require 'config.inc.php';
 if (isset($_POST['nom']) && $_POST['nom'] != '' && isset($_POST['prenom']) && $_POST['prenom'] != '' && isset($_POST['email']) && $_POST['email'] != '' && isset($_POST['password']) && $_POST['password'] != '') {
     try {
         $db = new PDO($conn);
-        $sql = "INSERT INTO users (nom, prenom, email, password) VALUES (:nom, :pouvoir, :email, :password)";
-        $requete = $db->prepare($sql);
+        $requete = $db->prepare();
         $requete->bindValue(':nom', $_POST['nom']);
         $requete->bindValue(':prenom', $_POST['prenom']);
         $requete->bindValue(':prenom', $_POST['prenom']);
