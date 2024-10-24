@@ -1,4 +1,5 @@
- <!doctype html>
+@ -1,41 +0,0 @@
+<!doctype html>
 <html lang="fr">
 <body>
 <head>
