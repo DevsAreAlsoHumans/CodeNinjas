@@ -1,4 +1,3 @@
-@ -1,41 +0,0 @@
 <!doctype html>
 <html lang="fr">
 <body>
@@ -10,18 +9,9 @@
 </head>
 <?php
 try {
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $conn = new PDO("mysql:host=$servername;dbname=code_ninjas", $username, $password);
-
-    try {
-        // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo "Connected successfully";
-    } catch(PDOException $e) {
-        echo "Connection failed: " . $e->getMessage();
-    }    $sql = "INSERT INTO users (nom, prenom,email ,date_naissance, password) VALUES (:nom, :prenom, :email,:date_naissance, :password)";
+    global$conn;
+    require "db.php";
+    $sql = "INSERT INTO users (nom, prenom,email ,date_naissance, password) VALUES (:nom, :prenom, :email,:date_naissance, :password)";
     $requete = $conn->prepare($sql);
     $requete->bindValue(':nom', $_POST['nom']);
     $requete->bindValue(':prenom', $_POST['prenom']);
