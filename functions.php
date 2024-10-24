@@ -49,4 +49,27 @@ function mail_exist($email, $db, $tablename) {
         $result['response'] = "Email address is already exists.";
     endif;
 }
+
+//checks if password match. Returns true if password match
+function check_password($user_id, $password) {
+
+    $hashedPassword = hash_password($password);
+
+    $stmt = $conn->prepare("SELECT mot_de_passe FROM users where id = ?");
+    $stmt->bind_param("i", $user_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows == 0) {
+        echo "bad user_id $user_id";
+        return false;
+    } else {
+        $row = $result->fetch_assoc();
+        if($row["mot_de_passe"] == $hashedPassword) {
+            return true;
+        } else {
+            return false;
+        }
+    } 
+}
 ?>
