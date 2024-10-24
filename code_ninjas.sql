@@ -3,15 +3,13 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 24 oct. 2024 à 09:27
+-- Généré le : jeu. 24 oct. 2024 à 14:00
 -- Version du serveur : 8.3.0
 -- Version de PHP : 8.2.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
-
-/**/
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -22,8 +20,27 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `code_ninjas`
 --
-CREATE DATABASE IF NOT EXISTS `code_ninjas` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE `code_ninjas`;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `roles`
+--
+
+DROP TABLE IF EXISTS `roles`;
+CREATE TABLE IF NOT EXISTS `roles` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nom_role` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `roles`
+--
+
+INSERT INTO `roles` (`id`, `nom_role`) VALUES
+(1, 'User'),
+(2, 'Admin');
 
 -- --------------------------------------------------------
 
@@ -40,7 +57,37 @@ CREATE TABLE IF NOT EXISTS `users` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `users`
+--
+
+INSERT INTO `users` (`id`, `nom`, `prenom`, `date_naissance`, `email`, `password`) VALUES
+(1, 'user', 'premier', '2024-05-25', 'premier.user@test.fr', 'test'),
+(2, 'admin', 'premier', '2024-06-26', 'premier.admin@test.fr', 'test');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `users_roles`
+--
+
+DROP TABLE IF EXISTS `users_roles`;
+CREATE TABLE IF NOT EXISTS `users_roles` (
+  `user_id` int NOT NULL,
+  `role_id` int NOT NULL,
+  PRIMARY KEY (`user_id`,`role_id`),
+  KEY `fk_role_id` (`role_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `users_roles`
+--
+
+INSERT INTO `users_roles` (`user_id`, `role_id`) VALUES
+(1, 1),
+(2, 2);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
