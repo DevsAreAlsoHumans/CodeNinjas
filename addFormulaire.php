@@ -40,7 +40,7 @@
 </form>
 
 <?php
-require "db.inc.php";
+require "db.php";
 if (isset($_POST['nom']) && $_POST['nom'] != '' && isset($_POST['prenom']) && $_POST['prenom'] != '' &&isset($_POST['email']) && $_POST['email'] != '' && isset($_POST['date_naissance']) && $_POST['date_naissance'] != '' && isset($_POST['password']) && $_POST['password'] != '') {
     try {
         $sql = "INSERT INTO users (nom, prenom,email ,date_naissance, password) VALUES (:nom, :prenom, :email,:date_naissance, :password)";
@@ -52,13 +52,13 @@ if (isset($_POST['nom']) && $_POST['nom'] != '' && isset($_POST['prenom']) && $_
             $requete->bindValue(':date_naissance', $_POST['date_naissance']);
             $requete->bindValue(':password', $_POST['password']);
             if ($requete->execute()) {
-                print("Your account has been created");
+                echo("Your account has been created");
             } else {
-                print("Account creation error");
+                echo("Account creation error");
             }
         }
     } catch (PDOException $e) {
-        print("Database connection error: " . $e->getMessage());
+        echo("Database connection error: " . $e->getMessage());
     }
 }
 ?>
