@@ -8,7 +8,7 @@
     <link rel="stylesheet"
               type="text/css"
               href="style.css" />
-    <title>S’inscrire sur notre site</title>
+    <title>S'inscrire sur notre site</title>
 </head>
 
 <body>
@@ -16,6 +16,7 @@
         <div class="row justify-content-md-center">
             <div class="col-5">
                 <h2>S’inscrire</h2><br><br>
+                <form>
 
                     <div class="form-group mb-3">
                         <input type="name" name="nom" placeholder="Nom" class="form-control">
