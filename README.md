@@ -1,12 +1,19 @@
-### Règle du hackathon
-- **Pas d'utilisation d'IA (chaptgpt, gemini, etc...) mais les recherches Google autorisé (StackOverflow, php.net, etc...)**
-- **Bonnes pratiques : règle de nommage, clareté du code...**
-- **Architecture claire**
-- **Séparation des responsabilités dans des fonctions**
-- **Code propre (documenter le code de manière concise, pas de variable non utilisée)**
-- **Bonne conduite : respect de vos camarades, de vos chefs de projet et de la bonne séance**
+### Règles du Hackathon
 
-- **Notation sur 100 points remis /20**
+1. **Interdiction formelle de l'utilisation d'IA générative (ex : ChatGPT, Gemini, etc.)**  
+   L’utilisation d’outils d'intelligence artificielle générative est **strictement interdite**. Si vous en faites usage, **vous serez disqualifié**, et **votre équipe entière sera pénalisée** par une réduction de points, ce qui affectera fortement votre score final. Les recherches sur Google, StackOverflow, php.net, etc., sont autorisées.
+
+2. **Respect des bonnes pratiques de développement**  
+   - **Code propre et lisible** : Adoptez des conventions de nommage cohérentes pour vos fonctions et variables afin de garantir une **clarté du code**. Le code doit être simple à comprendre et à maintenir, bien organisé, et exempt d’éléments inutiles. Utilisez des commentaires uniquement lorsque cela est nécessaire pour expliquer des choix techniques particuliers. Votre code doit être lisible par n'importe quel développeur.
+   - **Séparation des responsabilités** : Utilisez des fonctions distinctes pour chaque fonctionnalité afin de favoriser la réutilisabilité et la clarté du code.  
+
+3. **Contraintes techniques**  
+   - **Langages et outils** : Le projet doit être réalisé en **PHP** pour la partie serveur, avec **MySQL** pour la base de données. L'interface utilisateur doit être développée en **HTML/CSS**. Le tout doit être **versionné sur GitHub**, et le dépôt doit être organisé selon les meilleures pratiques de gestion de version.
+   - **Conception fonctionnelle** : Le développement doit suivre une approche **fonctionnelle**. Aucun recours à des classes ou à l’orientation objet n’est autorisé. Vous devez organiser votre code en fonctions indépendantes et modulaires, sans utiliser de modèle MVC ou de design pattern orienté objet.
+
+4. **Comportement professionnel et respectueux**  
+   - **Collaboration et respect** : Le travail en équipe est primordial. Respectez les idées et contributions de chacun, ainsi que les consignes des chefs de projet. Soyez attentif à vos coéquipiers et communiquez de manière claire et constructive.
+   - **Ambiance de travail** : Maintenez un environnement de travail sain et agréable. Le respect des autres participants et des règles est essentiel pour garantir une bonne expérience à tous.
 
 ---
 
