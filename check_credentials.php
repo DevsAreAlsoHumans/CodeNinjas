@@ -4,7 +4,7 @@ require __DIR__ . '/hash_password.php';
 /**
  * Bas niveau -> directement connecté à la base
  */
-function check_credentials($email, $password)
+function check_credentials($conn, $email, $password)
 {
     
     $hashedPassword = hash_password($password);
@@ -12,14 +12,12 @@ function check_credentials($email, $password)
     $querry = "SELECT email, mot_de_passe FROM users where email = {$email} AND mot_de_passe = {$hashedPassword}";
 
     // TODO Create connection or connect
-    $conn 
-
     $result = $conn->query($querry);
 
     if ($result->num_rows == 1) {
-        return true
+        return true;
     } else {
-        return false
+        return false;
     } 
    
 }
