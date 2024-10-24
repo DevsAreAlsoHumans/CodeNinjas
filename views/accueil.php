@@ -1,5 +1,3 @@
-<?php include('header.php'); ?>
-
 <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -8,7 +6,7 @@
         <title>Accueil</title>
         <h1>Bienvenue</h1>
     </head>
-        
     <body>
+        <?php include('header.php'); ?>
     </body>
 </html>
