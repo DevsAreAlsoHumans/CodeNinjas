@@ -9,13 +9,13 @@
         $query->execute();
         $result = $query->fetch(PDO::FETCH_ASSOC);
         if (!$result) {
-            echo '<p class="error">L\'email est incorrect</p>';
+            $erreur_form = '<p class="text-danger">L\'adresse ou le mot de passe est incorrect</p>';
         } else {
             if (password_verify($password, $result['password'])) {
                 $_SESSION['user_id'] = $result['id'];
                 header("Location: accueil.php");
             } else {
-                echo '<p class="error">Mot de passe incorrect</p>';
+                $erreur_form = '<p class="text-danger">L\'adresse ou le mot de passe est incorrect</p>';
             }
         }
     }
@@ -41,6 +41,7 @@
   </div>
   <div class="text-center">
   <button type="submit" class="btn bg-primary text-light my-1" name="login">Envoyer</button>
+  <?php if(isset($erreur_form)) { echo $erreur_form;}?>
   </div>
 </form>
 </html>
