@@ -1,6 +1,7 @@
 <?php
-require __DIR__ . '/hash_password.php';
 require __DIR__ . '/db.php';
+
+//Checks if the user with the email and password exists in the DB, returns TRUE or FALSE
 function check_credentials($email, $password)
 {
     
@@ -18,5 +19,11 @@ function check_credentials($email, $password)
         return false;
     } 
 
+}
+
+//hashes the password 
+function hash_password($input)
+{
+    return $hashedPassword = password_hash($input, PASSWORD_BCRYPT);
 }
 ?>
