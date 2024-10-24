@@ -2,9 +2,9 @@
     include("db.php");
     
     //Checks if the user with the email exists in the DB, returns TRUE or FALSE
-    function check_credentials($email)
+    function check_email($email)
     {
-        $stmt = $GLOBALS[$conn]->prepare("SELECT email, mot_de_passe FROM users where email = ?");
+        $stmt = $GLOBALS[$conn]->prepare("SELECT email, password FROM users where email = ?");
         $stmt->bind_param("s", $email);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -51,7 +51,7 @@ function check_password($email, $password) {
 
     $hashedPassword = hash_password($password);
 
-    $stmt = $GLOBALS[$conn]->prepare("SELECT mot_de_passe FROM users where email = ?");
+    $stmt = $GLOBALS[$conn]->prepare("SELECT password FROM users where email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -61,7 +61,7 @@ function check_password($email, $password) {
         return false;
     } else {
         $row = $result->fetch_assoc();
-        if($row["mot_de_passe"] == $hashedPassword) {
+        if($row["password"] == $hashedPassword) {
             return true;
         } else {
             return false;
