@@ -51,12 +51,12 @@ function mail_exist($email, $db, $tablename) {
 }
 
 //checks if password match. Returns true if password match
-function check_password($user_id, $password) {
+function check_password($email, $password) {
 
     $hashedPassword = hash_password($password);
 
-    $stmt = $conn->prepare("SELECT mot_de_passe FROM users where id = ?");
-    $stmt->bind_param("i", $user_id);
+    $stmt = $conn->prepare("SELECT mot_de_passe FROM users where email = ?");
+    $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();
 
