@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 24 oct. 2024 à 09:25
+-- Généré le : jeu. 24 oct. 2024 à 09:27
 -- Version du serveur : 8.3.0
 -- Version de PHP : 8.2.18
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `code_ninjas`
 --
+CREATE DATABASE IF NOT EXISTS `code_ninjas` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE `code_ninjas`;
 
 -- --------------------------------------------------------
 
