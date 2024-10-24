@@ -16,7 +16,7 @@
            
             <ul class="menu">
                 <li class="menu-item">
-                    <a href="">Accueil</a>
+                    <a href="accueil.php">Accueil</a>
                 </li>
                 <li class="menu-item">
                     <a href="">Admin</a>
@@ -26,17 +26,16 @@
                     </ul>
                 </li>
                 <li class="menu-item">
-                    <a href="">Profil</a>
-                    <ul class="sub-menu">
-                        <li><a href="">Déconnexion</a></li>
-                    </ul>
+                     <a href="../connexion.php">Connexion</a>
+                </li>
+                <li class="menu-item">
+                    <a href="Inscription.php">Inscription</a>
+                </li>
+                <li class="menu-item">
+                    <a href="../connexion.php">Déconnexion</a>
                 </li>
             </ul>
-        </nav> <br>
-
-    <hr><br><br>
-    
-
-
-    
-    
+        </nav>
+    <hr>
+    </body>
+</html>
