@@ -1,0 +1,96 @@
+
+body{
+
+    background-color: #ffcfa7;
+    justify-content: center;
+
+}
+
+h1{
+    text-align: center;
+
+}
+
+.formulaire{
+
+    width: 350px;
+
+    text-align: center;
+    border-style:inset;
+    border-width  : 10px;
+    justify-content: center;
+    background-color: #ffcfa7;
+
+    
+    
+}
+
+.description{
+
+    width: 150px;
+}
+
+
+
+
+
+/*Barre de navigation */
+
+
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.menu-item {
+    position: relative;
+}
+
+.menu-item a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+}
+
+.menu-item:hover {
+    background-color: #ffaf7a;
+}
+
+/* Style du menu déroulant */
+.sub-menu {
+    display: none;
+    position: absolute;
+    background-color: #ffaf7a;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+}
+
+.menu-item:hover .sub-menu {
+    display: block;
+}
+
+.sub-menu li {
+    display: block;
+}
+
+.sub-menu a {
+    padding: 10px 20px;
+}
+
+.sub-menu a:hover {
+    background-color: hsl(15, 90%, 60%);
+}
+
+.imgPlante {
+    height: 200px;
+}
+
+
+
