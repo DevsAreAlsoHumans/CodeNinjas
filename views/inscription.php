@@ -43,17 +43,20 @@
 </html>
 
 <?php
-require "db.php";
+require "../db.php";
+require "../functions.php";
+
 if (isset($_POST['nom']) && $_POST['nom'] != '' && isset($_POST['prenom']) && $_POST['prenom'] != '' &&isset($_POST['email']) && $_POST['email'] != '' && isset($_POST['date_naissance']) && $_POST['date_naissance'] != '' && isset($_POST['password']) && $_POST['password'] != '') {
     try {
         $sql = "INSERT INTO users (nom, prenom,email ,date_naissance, password) VALUES (:nom, :prenom, :email,:date_naissance, :password)";
+        $password = hash_password($_POST['password']);
         if (isset($conn)) {
             $requete = $conn->prepare($sql);
             $requete->bindValue(':nom', $_POST['nom']);
             $requete->bindValue(':prenom', $_POST['prenom']);
             $requete->bindValue(':email', $_POST['email']);
             $requete->bindValue(':date_naissance', $_POST['date_naissance']);
-            $requete->bindValue(':password', $_POST['password']);
+            $requete->bindValue(':password', $password);
             if ($requete->execute()) {
                 echo("Your account has been created");
             } else {
