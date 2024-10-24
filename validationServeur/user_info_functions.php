@@ -1,10 +1,14 @@
 <?php
 require __DIR__. '/db.php';
+
+//Check if the mail is valid
 function is_valid($email)
 {
     return filter_var($email, FILTER_VALIDATE_EMAIL) !== false;
 }
 
+
+//Check if the mail exist in the db
 function mail_exist($email, $db, $tablename) {
 $sql = "SELECT * FROM ". $tablename. "WHERE email='". $email."'";
 $results = $db->query($sql);
